@@ -9151,6 +9151,11 @@ react-app-rewired@^2.1.6:
   dependencies:
     semver "^5.6.0"
 
+react-chrome-extension-router@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-chrome-extension-router/-/react-chrome-extension-router-1.2.0.tgz#847db6db75c598767a3d4f30e8eb8f631ffe0004"
+  integrity sha512-nLE76mLQMzNC9I0Izc7hreNEQabsR9sYuFhGnhShVNTxAaBZyyYV/2QyM/qD6/igxyxc4ZnO54UshvtTwSIDEA==
+
 react-dev-utils@^10.2.1:
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-10.2.1.tgz#f6de325ae25fa4d546d09df4bb1befdc6dd19c19"

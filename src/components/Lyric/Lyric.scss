@@ -1,0 +1,69 @@
+@import "../../util/color.scss";
+
+.lyric {
+  width: 20rem;
+  background-color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  &-back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    &-artist {
+      color: $ft-gray;
+    }
+  }
+
+  &-viewlyric {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    min-height: 10rem;
+  }
+
+  &-goto {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $bd-gray;
+    padding: 0 1rem;
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-title {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      &-name {
+        color: $ft-gray;
+      }
+    }
+
+    &-photo {
+      width: 6rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

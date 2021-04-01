@@ -1,0 +1,33 @@
+@import "../../util/color.scss";
+
+.songlist {
+  width: 100%;
+  display: flex;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  flex-direction: column;
+
+  &-container {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    &-info {
+      &-title {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      &-artist {
+        font-size: 0.8rem;
+        color: $ft-gray;
+      }
+    }
+
+    &-play {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

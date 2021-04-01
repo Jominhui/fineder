@@ -1,13 +1,14 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Router } from "react-chrome-extension-router";
 import MainPage from "../pages/MainPage";
-
+import LyricPage from "../pages/LyricPage";
+import ArtistPage from "../pages/ArtistPage";
 const App = () => {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-      </Switch>
+      <Router>
+        <MainPage />
+      </Router>
     </div>
   );
 };

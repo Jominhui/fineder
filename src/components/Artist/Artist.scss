@@ -1,0 +1,58 @@
+@import "../../util/color.scss";
+
+.artist {
+  width: 20rem;
+  background-color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  &-back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    &-rank,
+    &-country {
+      color: $ft-gray;
+    }
+  }
+
+  &-album {
+    width: 80%;
+    display: flex;
+    padding: 1rem 0;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 1rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-name {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      &-song,
+      &-date {
+        color: $ft-gray;
+      }
+    }
+  }
+}

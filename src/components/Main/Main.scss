@@ -1,0 +1,9 @@
+@import "../../util/color.scss";
+
+.main {
+  width: 20rem;
+  background-color: $bg-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
