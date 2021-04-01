@@ -1,25 +1,18 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "name": "Fineder!",
+  "description": "당신이 몰랐던 가사와 아티스트의 정보를 알려주는 확장 프로그램입니다.",
+  "version": "1.0.0",
+  "short_name": "Fineder!",
+  "permissions": ["storage", "tabs"],
+  "manifest_version": 2,
+  "icons": {
+    "16": "logo.svg",
+    "48": "logo.svg",
+    "128": "logo.svg"
+  },
+  "browser_action": {
+    "default_icon": "logo.svg",
+    "default_popup": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-f+rJe0LHDvDY86BCOT+21GNcbRxFrP1Exu80HHHNn1o='; object-src 'self'"
 }
