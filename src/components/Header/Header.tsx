@@ -11,22 +11,18 @@ const Header = ({ searchType, handleSearchType }: HeaderProps) => {
     <>
       <div className="header">
         <div
-          className="header-controller"
-          onClick={
-            searchType === "song"
-              ? () => handleSearchType("artist")
-              : () => handleSearchType("song")
-          }
+          className="header-controll"
+          onClick={() => handleSearchType("song")}
+          style={{ color: searchType === "song" ? "black" : "gray" }}
         >
-          <input
-            type="checkbox"
-            id="switcher"
-            className="header-controller-name "
-          />
-          <label
-            className="header-controller-switch change"
-            htmlFor="switcher"
-          />
+          가사검색
+        </div>
+        <div
+          className="header-controll"
+          onClick={() => handleSearchType("artist")}
+          style={{ color: searchType === "artist" ? "black" : "gray" }}
+        >
+          아티스트검색
         </div>
       </div>
     </>

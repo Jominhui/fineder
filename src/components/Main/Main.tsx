@@ -21,13 +21,13 @@ const Main = ({
   return (
     <>
       <div className="main">
+        <Header searchType={searchType} handleSearchType={handleSearchType} />
         <Sreach
           searchType={searchType}
           setArtist={setArtist}
           setSong={setSong}
         />
         {searchType === "song" ? <SongList /> : <ArtistList />}
-        <Header searchType={searchType} handleSearchType={handleSearchType} />
       </div>
     </>
   );
