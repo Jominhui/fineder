@@ -1,4 +1,5 @@
 import React from "react";
+import { goBack } from "react-chrome-extension-router";
 import "./Artist.scss";
 import AlbumCover from "../../assets/images/AlbumCover.svg";
 
@@ -8,7 +9,14 @@ const Artist = ({}: ArtistProps) => {
   return (
     <>
       <div className="artist">
-        <div className="artist-back">◀</div>
+        <div
+          className="artist-back"
+          onClick={() => {
+            goBack();
+          }}
+        >
+          ◀
+        </div>
 
         <div className="artist-info">
           <div className="artist-info-name">Ash Island</div>

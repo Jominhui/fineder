@@ -1,4 +1,5 @@
 import React from "react";
+import { goBack } from "react-chrome-extension-router";
 import "./Lyric.scss";
 
 interface LyricProps {}
@@ -7,7 +8,14 @@ const Lyric = ({}: LyricProps) => {
   return (
     <>
       <div className="lyric">
-        <div className="lyric-back">◀</div>
+        <div
+          className="lyric-back"
+          onClick={() => {
+            goBack();
+          }}
+        >
+          ◀
+        </div>
 
         <div className="lyric-info">
           <div className="lyric-info-title">Lonely</div>

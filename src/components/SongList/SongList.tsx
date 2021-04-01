@@ -9,7 +9,12 @@ const SongList = ({}: SongListProps) => {
   return (
     <>
       <div className="songlist">
-        <div className="songlist-container" onClick={() => goTo(LyricPage)}>
+        <div
+          className="songlist-container"
+          onClick={() => {
+            goTo(LyricPage);
+          }}
+        >
           <div className="songlist-container-info">
             <div className="songlist-container-info-title">Lonely</div>
             <div className="songlist-container-info-artist">ASH ISLAND</div>
@@ -17,7 +22,12 @@ const SongList = ({}: SongListProps) => {
           <div className="songlist-container-play">▶</div>
         </div>
 
-        <div className="songlist-container">
+        <div
+          className="songlist-container"
+          onClick={() => {
+            goTo(LyricPage);
+          }}
+        >
           <div className="songlist-container-info">
             <div className="songlist-container-info-title">Lonely</div>
             <div className="songlist-container-info-artist">ASH ISLAND</div>
