@@ -1,6 +1,6 @@
 import { action, observable } from "mobx";
 import { autobind } from "core-decorators";
-import { TrackResponse } from "../../util/Types/Response";
+import { ArtistResponse, TrackResponse } from "../../util/Types/Response";
 import LyricApi from "../../assets/api/LyricApi";
 
 @autobind
@@ -15,6 +15,13 @@ class LyricStore {
   @action
   getTrack = async (title: string): Promise<TrackResponse> => {
     const response: TrackResponse = await LyricApi.GetTrack(title);
+
+    return response;
+  };
+
+  @action
+  getArtist = async (name: string): Promise<ArtistResponse> => {
+    const response: ArtistResponse = await LyricApi.GetArtist(name);
 
     return response;
   };

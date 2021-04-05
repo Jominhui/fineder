@@ -2,33 +2,35 @@ import React from "react";
 import { goTo } from "react-chrome-extension-router";
 import ArtistPage from "../../pages/ArtistPage";
 import "./ArtistList.scss";
+import { Artist } from "../../util/Types/Artist";
 
-interface ArtistListProps {}
+interface ArtistListProps {
+  artistList: Artist[];
+}
 
-const ArtistList = ({}: ArtistListProps) => {
+const ArtistList = ({ artistList }: ArtistListProps) => {
   return (
     <>
       <div className="ArtistList">
-        <div
-          className="ArtistList-container"
-          onClick={() => {
-            goTo(ArtistPage);
-          }}
-        >
-          <div className="ArtistList-container-box">
-            <div className="ArtistList-container-box-name">Ash Island</div>
-            <div className="ArtistList-container-box-info">info</div>
+        {artistList.map((res, idx) => (
+          <div
+            className="ArtistList-container"
+            key={idx}
+            onClick={() => {
+              goTo(ArtistPage);
+            }}
+          >
+            <div className="ArtistList-container-box">
+              <div className="ArtistList-container-box-name">
+                {res.artist_name}
+              </div>
+              <div className="ArtistList-container-box-info">
+                {res.artist_country}
+              </div>
+            </div>
+            <div className="ArtistList-container-go">▶</div>
           </div>
-          <div className="ArtistList-container-go">▶</div>
-        </div>
-
-        <div className="ArtistList-container">
-          <div className="ArtistList-container-box">
-            <div className="ArtistList-container-box-name">Jeaha</div>
-            <div className="ArtistList-container-box-info">info</div>
-          </div>
-          <div className="ArtistList-container-go">▶</div>
-        </div>
+        ))}
       </div>
     </>
   );

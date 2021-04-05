@@ -5,6 +5,7 @@ import SongList from "../SongList";
 import ArtistList from "../ArtistList";
 import Header from "../Header";
 import { Track } from "../../util/Types/Track";
+import { Artist } from "../../util/Types/Artist";
 
 interface MainProps {
   searchType: string;
@@ -12,6 +13,7 @@ interface MainProps {
   setArtist: React.Dispatch<React.SetStateAction<string>>;
   setSong: React.Dispatch<React.SetStateAction<string>>;
   track: Track[];
+  artistList: Artist[];
   isSearchSong: boolean;
 }
 
@@ -21,6 +23,7 @@ const Main = ({
   setSong,
   setArtist,
   track,
+  artistList,
   isSearchSong,
 }: MainProps) => {
   return (
@@ -32,7 +35,11 @@ const Main = ({
           setArtist={setArtist}
           setSong={setSong}
         />
-        {isSearchSong ? <SongList track={track} /> : <ArtistList />}
+        {isSearchSong ? (
+          <SongList track={track} />
+        ) : (
+          <ArtistList artistList={artistList} />
+        )}
       </div>
     </>
   );
