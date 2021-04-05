@@ -29,4 +29,4 @@ const Search = ({ searchType, setSong, setArtist }: SearchProps) => {
   );
 };
 
-export default Search;
+export default React.memo(Search);
