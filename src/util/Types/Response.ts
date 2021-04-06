@@ -1,3 +1,4 @@
+import { Albums } from "./albums";
 import { Artist } from "./Artist";
 import { Track } from "./Track";
 
@@ -23,5 +24,11 @@ export interface LyricResponse extends Response {
     lyrics: {
       lyrics_body: string;
     };
+  };
+}
+
+export interface AlbumsResponse extends Response {
+  data: {
+    album_list: Albums[];
   };
 }
