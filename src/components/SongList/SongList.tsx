@@ -6,9 +6,14 @@ import { Track } from "../../util/Types/Track";
 
 interface SongListProps {
   track: Track[];
+  handleTrack: (
+    trackId: number | null,
+    trackArtist: string,
+    trackTitle: string
+  ) => void;
 }
 
-const SongList = ({ track }: SongListProps) => {
+const SongList = ({ track, handleTrack }: SongListProps) => {
   return (
     <>
       <div className="songlist">
@@ -18,6 +23,7 @@ const SongList = ({ track }: SongListProps) => {
             className="songlist-container"
             onClick={() => {
               goTo(LyricPage);
+              handleTrack(res.track_id, res.artist_name, res.track_name);
             }}
           >
             <div className="songlist-container-info">

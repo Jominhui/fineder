@@ -22,6 +22,17 @@ class LyricApi {
       throw new Error(`${error}`);
     }
   }
+
+  async GetLyric(trackId: number | null) {
+    try {
+      const url = `http://localhost:3000/Lyric?track=${trackId}`;
+
+      const { data } = await axios.get(url);
+      return data;
+    } catch (error) {
+      throw new Error(`${error}`);
+    }
+  }
 }
 
 export default new LyricApi();

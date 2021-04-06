@@ -2,9 +2,13 @@ import React from "react";
 import { goBack } from "react-chrome-extension-router";
 import "./Lyric.scss";
 
-interface LyricProps {}
+interface LyricProps {
+  lyric: string;
+  trackArtist: string;
+  trackTitle: string;
+}
 
-const Lyric = ({}: LyricProps) => {
+const Lyric = ({ lyric, trackTitle, trackArtist }: LyricProps) => {
   return (
     <>
       <div className="lyric">
@@ -18,14 +22,14 @@ const Lyric = ({}: LyricProps) => {
         </div>
 
         <div className="lyric-info">
-          <div className="lyric-info-title">Lonely</div>
-          <div className="lyric-info-artist">Ash Island</div>
+          <div className="lyric-info-title">{trackTitle}</div>
+          <div className="lyric-info-artist">{trackArtist}</div>
         </div>
-        <div className="lyric-viewlyric">가사 없음</div>
+        <div className="lyric-viewlyric">{lyric}</div>
         <div className="lyric-goto">
           <div className="lyric-goto-info">
-            <div className="lyric-goto-info-title">Lonely</div>
-            <div className="lyric-goto-info-name">ashisland</div>
+            <div className="lyric-goto-info-title">{trackTitle}</div>
+            <div className="lyric-goto-info-name">{trackArtist}</div>
           </div>
           <div className="lyric-goto-photo">썸네일 없음</div>
         </div>

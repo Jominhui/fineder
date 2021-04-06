@@ -15,6 +15,11 @@ interface MainProps {
   track: Track[];
   artistList: Artist[];
   isSearchSong: boolean;
+  handleTrack: (
+    trackId: number | null,
+    trackArtist: string,
+    trackTitle: string
+  ) => void;
 }
 
 const Main = ({
@@ -25,6 +30,7 @@ const Main = ({
   track,
   artistList,
   isSearchSong,
+  handleTrack,
 }: MainProps) => {
   return (
     <>
@@ -36,7 +42,7 @@ const Main = ({
           setSong={setSong}
         />
         {isSearchSong ? (
-          <SongList track={track} />
+          <SongList track={track} handleTrack={handleTrack} />
         ) : (
           <ArtistList artistList={artistList} />
         )}

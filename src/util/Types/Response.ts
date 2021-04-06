@@ -17,3 +17,11 @@ export interface ArtistResponse extends Response {
     artist_list: Artist[];
   };
 }
+
+export interface LyricResponse extends Response {
+  data: {
+    lyrics: {
+      lyrics_body: string;
+    };
+  };
+}

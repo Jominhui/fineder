@@ -18,6 +18,7 @@ const MainContainer = () => {
     handleSearchType,
     getTrack,
     getArtist,
+    handleTrack,
   } = store.LyricStore;
 
   const isSearchSong = useMemo(() => searchType === "song", [searchType]);
@@ -79,6 +80,7 @@ const MainContainer = () => {
         track={track}
         artistList={artistList}
         isSearchSong={isSearchSong}
+        handleTrack={handleTrack}
       />
     </>
   );
