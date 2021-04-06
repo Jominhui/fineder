@@ -1,6 +1,7 @@
 import { action, observable } from "mobx";
 import { autobind } from "core-decorators";
 import {
+  AlbumsResponse,
   ArtistResponse,
   LyricResponse,
   TrackResponse,
@@ -13,6 +14,9 @@ class LyricStore {
   @observable trackTitle: string = "";
   @observable trackArtist: string = "";
   @observable trackId: number | null = null;
+  @observable artistId: number | null = null;
+  @observable rank: number | null = null;
+  @observable country: string = "";
 
   @action
   handleSearchType = (searchType: string) => {
@@ -31,6 +35,19 @@ class LyricStore {
   };
 
   @action
+  handleArtist = (
+    artistId: number | null,
+    trackArtist: string,
+    rank: number | null,
+    country: string
+  ) => {
+    this.artistId = artistId;
+    this.trackArtist = trackArtist;
+    this.rank = rank;
+    this.country = country;
+  };
+
+  @action
   getTrack = async (title: string): Promise<TrackResponse> => {
     const response: TrackResponse = await LyricApi.GetTrack(title);
 
@@ -45,8 +62,15 @@ class LyricStore {
   };
 
   @action
-  GetLyric = async (trackId: number | null): Promise<LyricResponse> => {
+  getLyric = async (trackId: number | null): Promise<LyricResponse> => {
     const response: LyricResponse = await LyricApi.GetLyric(trackId);
+
+    return response;
+  };
+
+  @action
+  getInfo = async (artistId: number | null): Promise<AlbumsResponse> => {
+    const response: AlbumsResponse = await LyricApi.GetInfo(artistId);
 
     return response;
   };

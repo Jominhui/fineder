@@ -33,6 +33,17 @@ class LyricApi {
       throw new Error(`${error}`);
     }
   }
+
+  async GetInfo(artistId: number | null) {
+    try {
+      const url = `http://localhost:3000/albums?artist=${artistId}`;
+
+      const { data } = await axios.get(url);
+      return data;
+    } catch (error) {
+      throw new Error(`${error}`);
+    }
+  }
 }
 
 export default new LyricApi();
