@@ -19,6 +19,7 @@ const MainContainer = () => {
     getTrack,
     getArtist,
     handleTrack,
+    handleArtist,
   } = store.LyricStore;
 
   const isSearchSong = useMemo(() => searchType === "song", [searchType]);
@@ -29,16 +30,13 @@ const MainContainer = () => {
       getTrack(song)
         .then((res) => {
           setTrack(res.data.track_list);
-          console.log(res.data.track_list);
           if (!res.data.track_list) {
             setNotfound(true);
-            console.log(notfound);
           }
         })
         .catch((err: AxiosError) => {
           if (err.response && err.response.status === 404) {
             setNotfound(true);
-            console.log(notfound);
           }
         });
     }
@@ -81,6 +79,7 @@ const MainContainer = () => {
         artistList={artistList}
         isSearchSong={isSearchSong}
         handleTrack={handleTrack}
+        handleArtist={handleArtist}
       />
     </>
   );

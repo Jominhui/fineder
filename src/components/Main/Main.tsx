@@ -20,6 +20,12 @@ interface MainProps {
     trackArtist: string,
     trackTitle: string
   ) => void;
+  handleArtist: (
+    artistId: number | null,
+    trackArtist: string,
+    rank: number | null,
+    country: string
+  ) => void;
 }
 
 const Main = ({
@@ -31,6 +37,7 @@ const Main = ({
   artistList,
   isSearchSong,
   handleTrack,
+  handleArtist,
 }: MainProps) => {
   return (
     <>
@@ -44,7 +51,7 @@ const Main = ({
         {isSearchSong ? (
           <SongList track={track} handleTrack={handleTrack} />
         ) : (
-          <ArtistList artistList={artistList} />
+          <ArtistList artistList={artistList} handleArtist={handleArtist} />
         )}
       </div>
     </>

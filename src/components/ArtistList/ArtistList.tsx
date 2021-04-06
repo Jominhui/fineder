@@ -6,9 +6,15 @@ import { Artist } from "../../util/Types/Artist";
 
 interface ArtistListProps {
   artistList: Artist[];
+  handleArtist: (
+    artistId: number | null,
+    trackArtist: string,
+    rank: number | null,
+    country: string
+  ) => void;
 }
 
-const ArtistList = ({ artistList }: ArtistListProps) => {
+const ArtistList = ({ artistList, handleArtist }: ArtistListProps) => {
   return (
     <>
       <div className="ArtistList">
@@ -18,6 +24,12 @@ const ArtistList = ({ artistList }: ArtistListProps) => {
             key={idx}
             onClick={() => {
               goTo(ArtistPage);
+              handleArtist(
+                res.artist_id,
+                res.artist_name,
+                res.artist_rating,
+                res.artist_country
+              );
             }}
           >
             <div className="ArtistList-container-box">

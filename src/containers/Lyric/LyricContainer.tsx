@@ -7,11 +7,11 @@ import { AxiosError } from "axios";
 const LyricContainer = ({}) => {
   const [lyric, setLyric] = useState<string>("");
   const { store } = useStore();
-  const { trackId, trackArtist, trackTitle, GetLyric } = store.LyricStore;
+  const { trackId, trackArtist, trackTitle, getLyric } = store.LyricStore;
   const [notfound, setNotfound] = useState<boolean>(false);
 
   const getLyricCallback = useCallback(async () => {
-    GetLyric(trackId)
+    getLyric(trackId)
       .then((res) => {
         setLyric(res.data.lyrics.lyrics_body);
         if (!res.data.lyrics.lyrics_body) {
