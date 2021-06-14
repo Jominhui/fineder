@@ -1,27 +1,48 @@
 import React from "react";
+import { goTo } from "react-chrome-extension-router";
+import ArtistPage from "../../pages/ArtistPage";
 import "./ArtistList.scss";
+import { Artist } from "../../util/Types/Artist";
 
-interface ArtistListProps {}
+interface ArtistListProps {
+  artistList: Artist[];
+  handleArtist: (
+    artistId: number | null,
+    trackArtist: string,
+    rank: number | null,
+    country: string
+  ) => void;
+}
 
-const ArtistList = ({}: ArtistListProps) => {
+const ArtistList = ({ artistList, handleArtist }: ArtistListProps) => {
   return (
     <>
       <div className="ArtistList">
-        <div className="ArtistList-container">
-          <div className="ArtistList-container-box">
-            <div className="ArtistList-container-box-name">Ash Island</div>
-            <div className="ArtistList-container-box-info">info</div>
+        {artistList.map((res, idx) => (
+          <div
+            className="ArtistList-container"
+            key={idx}
+            onClick={() => {
+              goTo(ArtistPage);
+              handleArtist(
+                res.artist_id,
+                res.artist_name,
+                res.artist_rating,
+                res.artist_country
+              );
+            }}
+          >
+            <div className="ArtistList-container-box">
+              <div className="ArtistList-container-box-name">
+                {res.artist_name}
+              </div>
+              <div className="ArtistList-container-box-info">
+                {res.artist_country}
+              </div>
+            </div>
+            <div className="ArtistList-container-go">▶</div>
           </div>
-          <div className="ArtistList-container-go">▶</div>
-        </div>
-
-        <div className="ArtistList-container">
-          <div className="ArtistList-container-box">
-            <div className="ArtistList-container-box-name">Jeaha</div>
-            <div className="ArtistList-container-box-info">info</div>
-          </div>
-          <div className="ArtistList-container-go">▶</div>
-        </div>
+        ))}
       </div>
     </>
   );

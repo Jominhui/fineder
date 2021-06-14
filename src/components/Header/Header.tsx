@@ -29,4 +29,4 @@ const Header = ({ searchType, handleSearchType }: HeaderProps) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

@@ -4,12 +4,28 @@ import Sreach from "../Search";
 import SongList from "../SongList";
 import ArtistList from "../ArtistList";
 import Header from "../Header";
+import { Track } from "../../util/Types/Track";
+import { Artist } from "../../util/Types/Artist";
 
 interface MainProps {
   searchType: string;
   handleSearchType: (searchType: string) => void;
   setArtist: React.Dispatch<React.SetStateAction<string>>;
   setSong: React.Dispatch<React.SetStateAction<string>>;
+  track: Track[];
+  artistList: Artist[];
+  isSearchSong: boolean;
+  handleTrack: (
+    trackId: number | null,
+    trackArtist: string,
+    trackTitle: string
+  ) => void;
+  handleArtist: (
+    artistId: number | null,
+    trackArtist: string,
+    rank: number | null,
+    country: string
+  ) => void;
 }
 
 const Main = ({
@@ -17,6 +33,11 @@ const Main = ({
   handleSearchType,
   setSong,
   setArtist,
+  track,
+  artistList,
+  isSearchSong,
+  handleTrack,
+  handleArtist,
 }: MainProps) => {
   return (
     <>
@@ -27,7 +48,11 @@ const Main = ({
           setArtist={setArtist}
           setSong={setSong}
         />
-        {searchType === "song" ? <SongList /> : <ArtistList />}
+        {isSearchSong ? (
+          <SongList track={track} handleTrack={handleTrack} />
+        ) : (
+          <ArtistList artistList={artistList} handleArtist={handleArtist} />
+        )}
       </div>
     </>
   );
