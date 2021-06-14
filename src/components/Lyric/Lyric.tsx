@@ -39,7 +39,6 @@ const Lyric = ({ lyric, trackTitle, trackArtist }: LyricProps) => {
             <div className="lyric-goto-info-title">{trackTitle}</div>
             <div className="lyric-goto-info-name">{trackArtist}</div>
           </div>
-          <div className="lyric-goto-photo">썸네일 없음</div>
         </div>
       </div>
     </>
