@@ -26,7 +26,15 @@ const Lyric = ({ lyric, trackTitle, trackArtist }: LyricProps) => {
           <div className="lyric-info-artist">{trackArtist}</div>
         </div>
         <div className="lyric-viewlyric">{lyric}</div>
-        <div className="lyric-goto">
+        <div
+          className="lyric-goto"
+          onClick={() =>
+            window.open(
+              `https://www.youtube.com/results?search_query=${trackArtist}-${trackTitle}`,
+              "_blank"
+            )
+          }
+        >
           <div className="lyric-goto-info">
             <div className="lyric-goto-info-title">{trackTitle}</div>
             <div className="lyric-goto-info-name">{trackArtist}</div>
